@@ -35,14 +35,14 @@ const projects: Project[] = [
         color: "from-violet-400 to-purple-600",
     },
     {
-        id: "fitness-tracker",
-        title: "Fitness Tracker",
+        id: "chemicalbalancercalc",
+        title:"Chemical Equation Balancer",
         description:
-            "A cross-platform fitness app with workout logging, progress charts, calorie tracking, and personalized exercise recommendations.",
-        techStack: ["React Native", "Firebase", "Chart.js", "TypeScript"],
+            "This is my simple project when i was in college a chemical equation calculator that calculates math equations or a chemical compositions.",
+        techStack: ["HTML","Tailwindcss","Javascript"],
         //githubUrl: "https://github.com/johnxiler/fitness-tracker",
-        liveUrl: "#",
-        image: "", // Triggers fallback
+        liveUrl: "https://chemicalbalancercalculater.vercel.app/",
+        image: "/projects/chem-bal.webp", // Triggers fallback
         color: "from-pink-400 to-rose-600",
     },
 ];
