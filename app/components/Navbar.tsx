@@ -3,9 +3,9 @@
 import { useState, useEffect } from "react";
 
 const navLinks = [
-    { label: "Projects", href: "#projects" },
-    { label: "About", href: "#about" },
-    { label: "Contact", href: "#contact" },
+    { label: "Projects", href: "/projects" },
+    { label: "About", href: "/about" },
+    { label: "Contact", href: "/contact" },
 ];
 
 export default function Navbar() {
@@ -34,7 +34,8 @@ export default function Navbar() {
                 }}
             >
                 {/* Logo */}
-                <a href="#" className="nav-link" style={{ fontSize: "1.1rem", fontWeight: 700, color: "var(--text-primary)", letterSpacing: "-0.02em" }}>
+                <a href="/" className="nav-link" style={{ display: "flex", alignItems: "center", gap: "0.5rem", fontSize: "1.1rem", fontWeight: 700, color: "var(--text-primary)", letterSpacing: "-0.02em" }}>
+                    <img src="/favicon.ico" alt="Logo" style={{ width: "24px", height: "24px" }} />
                     <span className="gradient-text">JX</span>
                     {/* <span style={{ marginLeft: "4px", opacity: 0.6, fontWeight: 400 }}>folio</span> */}
                 </a>
@@ -54,7 +55,7 @@ export default function Navbar() {
                             </a>
                         ))}
                     </div>
-                    <a href="#contact" className="glow-btn" style={{ padding: "0.5rem 1.25rem", fontSize: "0.8rem" }}>
+                    <a href="/contact" className="glow-btn" style={{ padding: "0.5rem 1.25rem", fontSize: "0.8rem" }}>
                         <span>Get in Touch</span>
                     </a>
                 </div>
