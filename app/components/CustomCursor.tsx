@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function CustomCursor() {
   const dotRef = useRef<HTMLDivElement>(null);
@@ -10,49 +10,57 @@ export default function CustomCursor() {
   const ringPos = useRef({ x: -100, y: -100 });
   const trailPos = useRef({ x: -100, y: -100 });
   const hovering = useRef(false);
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
+    // Check if device is mobile/touch
+    const isMobile = window.matchMedia("(pointer: coarse)").matches || window.innerWidth < 768;
+    if (isMobile) return;
+
+    setIsVisible(true);
+
     const onMove = (e: MouseEvent) => {
       pos.current = { x: e.clientX, y: e.clientY };
     };
 
-    const onEnter = () => { hovering.current = true; };
-    const onLeave = () => { hovering.current = false; };
-
-    window.addEventListener("mousemove", onMove);
-
+    // Use event delegation for hover states - much more efficient than MutationObserver
     const interactiveSelector = "a, button, .glass-card, .glow-btn, .outline-btn, .social-icon, .nav-link, .tech-badge";
 
-    const attachHoverListeners = () => {
-      document.querySelectorAll(interactiveSelector).forEach((el) => {
-        el.addEventListener("mouseenter", onEnter);
-        el.addEventListener("mouseleave", onLeave);
-      });
+    const onOver = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+      if (target.closest(interactiveSelector)) {
+        hovering.current = true;
+      }
     };
 
-    attachHoverListeners();
+    const onOut = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+      if (target.closest(interactiveSelector)) {
+        hovering.current = false;
+      }
+    };
 
-    const observer = new MutationObserver(() => {
-      attachHoverListeners();
-    });
-    observer.observe(document.body, { childList: true, subtree: true });
+    window.addEventListener("mousemove", onMove, { passive: true });
+    document.addEventListener("mouseover", onOver, { passive: true });
+    document.addEventListener("mouseout", onOut, { passive: true });
 
     let raf: number;
     const animate = () => {
       // Dot follows instantly
       if (dotRef.current) {
-        dotRef.current.style.transform = `translate(${pos.current.x - 4}px, ${pos.current.y - 4}px)`;
+        dotRef.current.style.transform = `translate3d(${pos.current.x - 4}px, ${pos.current.y - 4}px, 0)`;
       }
 
       // Ring follows with lag
       ringPos.current.x += (pos.current.x - ringPos.current.x) * 0.15;
       ringPos.current.y += (pos.current.y - ringPos.current.y) * 0.15;
+
       if (ringRef.current) {
         const size = hovering.current ? 56 : 36;
         const offset = size / 2;
         ringRef.current.style.width = `${size}px`;
         ringRef.current.style.height = `${size}px`;
-        ringRef.current.style.transform = `translate(${ringPos.current.x - offset}px, ${ringPos.current.y - offset}px)`;
+        ringRef.current.style.transform = `translate3d(${ringPos.current.x - offset}px, ${ringPos.current.y - offset}px, 0)`;
         ringRef.current.style.borderColor = hovering.current
           ? "var(--accent-cyan)"
           : "rgba(0, 240, 255, 0.4)";
@@ -63,7 +71,7 @@ export default function CustomCursor() {
       trailPos.current.x += (pos.current.x - trailPos.current.x) * 0.08;
       trailPos.current.y += (pos.current.y - trailPos.current.y) * 0.08;
       if (trailRef.current) {
-        trailRef.current.style.transform = `translate(${trailPos.current.x - 20}px, ${trailPos.current.y - 20}px)`;
+        trailRef.current.style.transform = `translate3d(${trailPos.current.x - 20}px, ${trailPos.current.y - 20}px, 0)`;
         trailRef.current.style.opacity = hovering.current ? "0.4" : "0.15";
       }
 
@@ -73,10 +81,13 @@ export default function CustomCursor() {
 
     return () => {
       window.removeEventListener("mousemove", onMove);
+      document.removeEventListener("mouseover", onOver);
+      document.removeEventListener("mouseout", onOut);
       cancelAnimationFrame(raf);
-      observer.disconnect();
     };
   }, []);
+
+  if (!isVisible) return null;
 
   return (
     <>

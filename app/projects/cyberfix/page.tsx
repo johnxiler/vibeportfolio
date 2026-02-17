@@ -1,9 +1,9 @@
 "use client";
 
 import AnimatedBackground from "../../components/AnimatedBackground";
-import Navbar from "../../components/Navbar";
 import { useScrollReveal } from "../../hooks/useScrollReveal";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function CyberFixGallery() {
     const galleryRef = useScrollReveal();
@@ -18,7 +18,6 @@ export default function CyberFixGallery() {
     return (
         <>
             <AnimatedBackground />
-            <Navbar />
 
             <section className="section" style={{ paddingTop: "8rem", minHeight: "100vh" }}>
                 <div
@@ -81,9 +80,11 @@ export default function CyberFixGallery() {
                                     e.currentTarget.style.borderColor = "rgba(0, 240, 255, 0.2)";
                                 }}
                             >
-                                <img
+                                <Image
                                     src={src}
                                     alt={`CyberFix Screenshot ${index + 1}`}
+                                    width={900}
+                                    height={500}
                                     style={{
                                         width: "100%",
                                         height: "auto",

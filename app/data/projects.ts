@@ -42,7 +42,7 @@ const projects: Project[] = [
         techStack: ["React Native", "Firebase", "Chart.js", "TypeScript"],
         //githubUrl: "https://github.com/johnxiler/fitness-tracker",
         liveUrl: "#",
-        image: "/projects/fitness.webp",
+        image: "", // Triggers fallback
         color: "from-pink-400 to-rose-600",
     },
 ];

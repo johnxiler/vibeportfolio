@@ -1,5 +1,11 @@
 @import "tailwindcss";
 
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 /* ───────────────── Design Tokens ───────────────── */
 :root {
   --bg-primary: #10101a;
@@ -65,32 +71,35 @@ body {
 }
 
 /* ───────────── Animated Background Grid ───────── */
-.animated-grid {
-  position: fixed;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  overflow: hidden;
-}
+@media (min-width: 768px) {
+  .animated-grid {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+  }
 
-.animated-grid::before {
-  content: "";
-  position: absolute;
-  inset: -50%;
-  width: 200%;
-  height: 200%;
-  background-image:
-    linear-gradient(rgba(0, 240, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 240, 255, 0.03) 1px, transparent 1px);
-  background-size: 60px 60px;
-  animation: gridScroll 25s linear infinite;
-}
+  .animated-grid::before {
+    content: "";
+    position: absolute;
+    inset: -50%;
+    width: 200%;
+    height: 200%;
+    background-image:
+      linear-gradient(rgba(0, 240, 255, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 240, 255, 0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+    animation: gridScroll 25s linear infinite;
+    will-change: transform;
+  }
 
-.animated-grid::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(ellipse at 50% 0%, transparent 40%, var(--bg-primary) 80%);
+  .animated-grid::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 50% 0%, transparent 40%, var(--bg-primary) 80%);
+  }
 }
 
 @keyframes gridScroll {
@@ -104,44 +113,47 @@ body {
 }
 
 /* ───────────── Floating Orbs ───────────────────── */
-.orb {
-  position: fixed;
-  border-radius: 50%;
-  filter: blur(80px);
-  opacity: 0.25;
-  pointer-events: none;
-  z-index: 0;
-  animation: orbFloat 20s ease-in-out infinite alternate;
-}
+@media (min-width: 768px) {
+  .orb {
+    position: fixed;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.25;
+    pointer-events: none;
+    z-index: 0;
+    animation: orbFloat 20s ease-in-out infinite alternate;
+    will-change: transform;
+  }
 
-.orb-1 {
-  width: 500px;
-  height: 500px;
-  background: var(--accent-cyan);
-  top: -10%;
-  right: -10%;
-  animation-duration: 22s;
-}
+  .orb-1 {
+    width: 500px;
+    height: 500px;
+    background: var(--accent-cyan);
+    top: -10%;
+    right: -10%;
+    animation-duration: 22s;
+  }
 
-.orb-2 {
-  width: 400px;
-  height: 400px;
-  background: var(--accent-violet);
-  bottom: -5%;
-  left: -5%;
-  animation-duration: 18s;
-  animation-delay: -5s;
-}
+  .orb-2 {
+    width: 400px;
+    height: 400px;
+    background: var(--accent-violet);
+    bottom: -5%;
+    left: -5%;
+    animation-duration: 18s;
+    animation-delay: -5s;
+  }
 
-.orb-3 {
-  width: 300px;
-  height: 300px;
-  background: var(--accent-pink);
-  top: 40%;
-  left: 50%;
-  opacity: 0.12;
-  animation-duration: 25s;
-  animation-delay: -10s;
+  .orb-3 {
+    width: 300px;
+    height: 300px;
+    background: var(--accent-pink);
+    top: 40%;
+    left: 50%;
+    opacity: 0.12;
+    animation-duration: 25s;
+    animation-delay: -10s;
+  }
 }
 
 @keyframes orbFloat {
@@ -167,6 +179,7 @@ body {
   position: relative;
   z-index: 1;
   padding: 6rem 1.5rem;
+  contain: paint;
 }
 
 @media (min-width: 768px) {
@@ -210,6 +223,7 @@ body {
   transform: translateY(40px);
   transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
     transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
 }
 
 .reveal.revealed {
@@ -296,6 +310,14 @@ body {
   50% {
     border-color: transparent;
   }
+}
+
+.hero-title,
+.hero-subtitle,
+.hero-tagline,
+.hero-cta,
+.hero-badge {
+  will-change: transform, opacity;
 }
 
 .hero-title {

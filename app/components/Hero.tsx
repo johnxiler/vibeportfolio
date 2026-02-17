@@ -1,29 +1,28 @@
 "use client";
 
-import { useScrollReveal } from "../hooks/useScrollReveal";
-
 export default function HeroSection() {
     return (
         <section
             className="section"
             style={{
-                minHeight: "90vh",
+                minHeight: "85vh",
                 display: "flex",
                 alignItems: "center",
-                paddingTop: "10rem",
-                paddingBottom: "8rem",
+                paddingTop: "clamp(6rem, 15vh, 10rem)",
+                paddingBottom: "clamp(4rem, 10vh, 8rem)",
                 position: "relative",
                 overflow: "hidden",
             }}
         >
             {/* Ambient background glow for hero */}
             <div
+                className="hidden md:block"
                 style={{
                     position: "absolute",
                     top: "40%",
                     left: "20%",
-                    width: "400px",
-                    height: "400px",
+                    width: "clamp(200px, 50vw, 400px)",
+                    height: "clamp(200px, 50vw, 400px)",
                     background: "radial-gradient(circle, var(--accent-cyan-glow) 0%, transparent 70%)",
                     opacity: 0.15,
                     pointerEvents: "none",
@@ -31,29 +30,29 @@ export default function HeroSection() {
                 }}
             />
 
-            <div className="container" style={{ maxWidth: "1100px" }}>
+            <div className="container" style={{ maxWidth: "1100px", padding: "0 1.25rem" }}>
                 <div style={{ maxWidth: "800px", position: "relative", zIndex: 1 }}>
                     {/* Status badge */}
-                    <div className="hero-badge" style={{ marginBottom: "2rem" }}>
+                    <div className="hero-badge" style={{ marginBottom: "1.5rem" }}>
                         <span
                             style={{
                                 display: "inline-flex",
                                 alignItems: "center",
-                                gap: "0.6rem",
-                                padding: "0.5rem 1.25rem",
+                                gap: "0.5rem",
+                                padding: "0.4rem 1rem",
                                 borderRadius: "9999px",
                                 background: "rgba(0, 240, 255, 0.04)",
                                 border: "1px solid rgba(0, 240, 255, 0.1)",
                                 color: "var(--accent-cyan)",
-                                fontSize: "0.85rem",
+                                fontSize: "clamp(0.7rem, 2vw, 0.85rem)",
                                 fontWeight: 500,
                                 letterSpacing: "0.01em",
                             }}
                         >
                             <span
                                 style={{
-                                    width: 7,
-                                    height: 7,
+                                    width: 6,
+                                    height: 6,
                                     borderRadius: "50%",
                                     background: "#34d399",
                                     boxShadow: "0 0 10px rgba(52, 211, 153, 0.4)",
@@ -68,11 +67,11 @@ export default function HeroSection() {
                     <h1
                         className="hero-title"
                         style={{
-                            fontSize: "clamp(2.5rem, 8vw, 5rem)",
+                            fontSize: "clamp(2.2rem, 9vw, 5rem)",
                             fontWeight: 800,
-                            lineHeight: 1.05,
+                            lineHeight: 1.1,
                             letterSpacing: "-0.04em",
-                            marginBottom: "1.5rem",
+                            marginBottom: "1rem",
                         }}
                     >
                         Building Digital{" "}
@@ -83,10 +82,10 @@ export default function HeroSection() {
                     <p
                         className="hero-subtitle"
                         style={{
-                            fontSize: "clamp(1.1rem, 2.8vw, 1.75rem)",
+                            fontSize: "clamp(1rem, 4vw, 1.75rem)",
                             fontWeight: 500,
                             color: "var(--text-primary)",
-                            lineHeight: 1.4,
+                            lineHeight: 1.3,
                             marginBottom: "1.25rem",
                             opacity: 0.9,
                         }}
@@ -98,11 +97,11 @@ export default function HeroSection() {
                     <p
                         className="reveal reveal-delay-3"
                         style={{
-                            fontSize: "1.15rem",
+                            fontSize: "clamp(0.95rem, 3vw, 1.15rem)",
                             color: "var(--text-secondary)",
-                            lineHeight: 1.8,
+                            lineHeight: 1.7,
                             maxWidth: "600px",
-                            marginBottom: "2.5rem",
+                            marginBottom: "2rem",
                         }}
                     >
                         Specializing in building exceptional digital experiences that are
@@ -110,12 +109,12 @@ export default function HeroSection() {
                     </p>
 
                     {/* CTAs */}
-                    <div className="hero-cta" style={{ display: "flex", flexWrap: "wrap", gap: "1.25rem" }}>
-                        <a href="/projects" className="glow-btn">
+                    <div className="hero-cta" style={{ display: "flex", flexWrap: "wrap", gap: "1rem" }}>
+                        <a href="/projects" className="glow-btn" style={{ padding: "0.8rem 1.75rem", fontSize: "0.9rem" }}>
                             <span>Explore Projects</span>
                             <span style={{ marginLeft: "4px" }}>→</span>
                         </a>
-                        <a href="/contact" className="outline-btn">
+                        <a href="/contact" className="outline-btn" style={{ padding: "0.8rem 1.75rem", fontSize: "0.9rem" }}>
                             Get in touch
                         </a>
                     </div>

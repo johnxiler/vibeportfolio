@@ -1,27 +1,29 @@
 "use client";
 
-import AnimatedBackground from "./components/AnimatedBackground";
-import Navbar from "./components/Navbar";
-import { useScrollReveal } from "./hooks/useScrollReveal";
-import HeroSection from "./components/Hero";
-import ProjectsSection from "./components/ProjectsSection";
-import AboutSection from "./components/AboutSection";
-import ContactSection from "./components/ContactSection";
+import dynamic from "next/dynamic";
+import AnimatedBackground from "@/app/components/AnimatedBackground";
+import HeroSection from "@/app/components/Hero";
+
+// Dynamic imports for non-critical sections to improve JS execution time
+const ProjectsSection = dynamic(() => import("@/app/components/ProjectsSection"), {
+  loading: () => <div className="min-h-[400px]" />,
+});
+const AboutSection = dynamic(() => import("@/app/components/AboutSection"), {
+  loading: () => <div className="min-h-[400px]" />,
+});
+const ContactSection = dynamic(() => import("@/app/components/ContactSection"), {
+  loading: () => <div className="min-h-[400px]" />,
+});
 
 /* ═══════════════ Main Page ═══════════════ */
 export default function Home() {
-  const projectsRef = useScrollReveal();
-  const aboutRef = useScrollReveal();
-  const contactRef = useScrollReveal();
-
   return (
     <>
       <AnimatedBackground />
-      <Navbar />
       <HeroSection />
-      <ProjectsSection sectionRef={projectsRef} />
-      <AboutSection sectionRef={aboutRef} />
-      <ContactSection sectionRef={contactRef} />
+      <ProjectsSection />
+      <AboutSection />
+      <ContactSection />
     </>
   );
 }

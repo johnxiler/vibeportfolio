@@ -2,8 +2,10 @@
 
 import ProjectCard from "./ProjectCard";
 import projects from "../data/projects";
+import { useScrollReveal } from "../hooks/useScrollReveal";
 
-export default function ProjectsSection({ sectionRef }: { sectionRef?: any }) {
+export default function ProjectsSection() {
+    const sectionRef = useScrollReveal();
     return (
         <section id="projects" className="section" ref={sectionRef}>
             <div className="container" style={{ maxWidth: "1100px" }}>
