@@ -1,5 +1,3 @@
-"use client";
-
 import AnimatedBackground from "../components/AnimatedBackground";
 import ContactSection from "../components/ContactSection";
 
