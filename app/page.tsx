@@ -14,6 +14,9 @@ const AboutSection = dynamic(() => import("@/app/components/AboutSection"), {
 const ContactSection = dynamic(() => import("@/app/components/ContactSection"), {
   loading: () => <div className="min-h-[400px]" />,
 });
+const ExperienceSection = dynamic(() => import("@/app/components/ExperienceSection"), {
+  loading: () => <div className="min-h-[400px]" />,
+});
 
 /* ═══════════════ Main Page ═══════════════ */
 export default function Home() {
@@ -22,6 +25,7 @@ export default function Home() {
       <AnimatedBackground />
       <HeroSection />
       <ProjectsSection />
+      <ExperienceSection />
       <AboutSection />
       <ContactSection />
     </>

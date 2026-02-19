@@ -6,6 +6,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 const navLinks = [
+    { label: "Experience", href: "/experience" },
     { label: "Projects", href: "/projects" },
     { label: "About", href: "/about" },
     { label: "Contact", href: "/contact" },
@@ -74,10 +75,21 @@ export default function Navbar() {
                     {/* Logo */}
                     <Link
                         href="/"
-                        className="flex items-center gap-2 font-bold text-white text-lg"
+                        className="flex items-center gap-2 font-bold text-lg group"
+                        style={{
+                            transition: "all 0.3s ease",
+                        }}
                     >
-                        <Image src="/favicon.ico" alt="Logo" width={20} height={20} className="w-5 h-5" />
-                        <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+                        <Image 
+                            src="/favicon.ico" 
+                            alt="Logo" 
+                            width={20} 
+                            height={20} 
+                            className="w-5 h-5 transition-all duration-300 group-hover:scale-110 group-hover:drop-shadow-[0_0_8px_rgba(0,240,255,0.8)]" 
+                        />
+                        <span 
+                            className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent transition-all duration-300 group-hover:drop-shadow-[0_0_10px_rgba(0,240,255,0.6)]"
+                        >
                             JX
                         </span>
                     </Link>
