@@ -17,7 +17,7 @@ const experiences: Experience[] = [
         id: "1",
         role: "SEO Specialist",
         company: "Freelance",
-        period: "Jun 2023 - Present · 2 yrs 9 mos",
+        period: "Jun 2019 - 2021 · 2 yrs 9 mos",
         description: "Helping retail health and personal care product websites rank on top of Google and Bing search engines.",
         highlights: [
             "Optimized websites for search engine ranking",
@@ -30,7 +30,7 @@ const experiences: Experience[] = [
         id: "2",
         role: "Landing Page Designer",
         company: "Freelance",
-        period: "Jul 2018 - Present · 7 yrs 8 mos",
+        period: "Jul 2018 - Present · 9 yrs 8 mos",
         description: "Helping businesses showcase their products and generate leads through high-converting landing pages.",
         highlights: [
             "Designed 50+ landing pages for various businesses",

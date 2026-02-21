@@ -45,6 +45,17 @@ const projects: Project[] = [
         image: "/projects/chem-bal.webp", // Triggers fallback
         color: "from-pink-400 to-rose-600",
     },
+    {
+        id: "shopeeaffiliate",
+        title:"Shopee Affiliate Landing Page",
+        description:
+            "This is my simple project when i was in college a chemical equation calculator that calculates math equations or a chemical compositions.",
+        techStack: ["HTML","Tailwindcss","Javascript"],
+        //githubUrl: "https://github.com/johnxiler/fitness-tracker",
+        liveUrl: "https://limited-stocks-essentials.vercel.app/",
+        image: "/projects/shopeeaffiliate.webp", // Triggers fallback
+        color: "from-orange-400 to-orange-600",
+    },
 ];
 
 export default projects;
