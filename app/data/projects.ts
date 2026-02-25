@@ -7,7 +7,7 @@ export interface Project {
     liveUrl?: string;
     liveUrlLabel?: string;
     image: string;
-    color: string; // accent gradient
+    color: string;
 }
 
 const projects: Project[] = [
@@ -17,7 +17,6 @@ const projects: Project[] = [
         description:
             "bash script to fix common tech support issues",
         techStack: ["bash", "exe"],
-        //githubUrl: "https://github.com/johnxiler/ai-chat",
         liveUrl: "/projects/cyberfix",
         liveUrlLabel: "See Images",
         image: "/projects/cyberfix.webp",
@@ -29,7 +28,6 @@ const projects: Project[] = [
         description:
             "Full-stack teachers reservation platform with user authentication, booking system, and an admin dashboard for managing reservations.",
         techStack: ["React", "Node.js", "Supabase", "Tailwind CSS", "TypeScript"],
-        //githubUrl: "https://github.com/johnxiler/club-connect",
         liveUrl: "https://club-connect-uk.vercel.app/",
         image: "/projects/club-connect.webp",
         color: "from-violet-400 to-purple-600",
@@ -40,20 +38,18 @@ const projects: Project[] = [
         description:
             "This is my simple project when i was in college a chemical equation calculator that calculates math equations or a chemical compositions.",
         techStack: ["HTML","Tailwindcss","Javascript"],
-        //githubUrl: "https://github.com/johnxiler/fitness-tracker",
         liveUrl: "https://chemicalbalancercalculater.vercel.app/",
-        image: "/projects/chem-bal.webp", // Triggers fallback
+        image: "/projects/chem-bal.webp",
         color: "from-pink-400 to-rose-600",
     },
     {
         id: "shopeeaffiliate",
         title:"Shopee Affiliate Landing Page",
         description:
-            "This is my simple project when i was in college a chemical equation calculator that calculates math equations or a chemical compositions.",
+            "This is an affiliate landing page that helps users find the best deals on Shopee,Tiktok and Lazada products.",
         techStack: ["HTML","Tailwindcss","Javascript"],
-        //githubUrl: "https://github.com/johnxiler/fitness-tracker",
         liveUrl: "https://limited-stocks-essentials.vercel.app/",
-        image: "/projects/shopeeaffiliate.webp", // Triggers fallback
+        image: "/projects/shopeeaffiliate.webp",
         color: "from-orange-400 to-orange-600",
     },
 ];
