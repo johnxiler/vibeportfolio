@@ -36,7 +36,19 @@ body {
 
 /* ───────────── Global Reset & Base ─────────────── */
 * {
-  cursor: none !important;
+  cursor: default;
+}
+
+body {
+  cursor: default !important;
+  /* Force body to show cursor */
+}
+
+a,
+button,
+[role="button"] {
+  cursor: pointer !important;
+  /* Ensure clickables have pointer */
 }
 
 html {
@@ -230,7 +242,7 @@ body {
 .experience-card:hover {
   border-color: var(--card-border-hover);
   box-shadow: 0 0 30px var(--accent-cyan-glow), 0 8px 32px rgba(0, 0, 0, 0.4);
-  
+
 }
 
 /* ───────────── Scroll Reveal ──────────────────── */

@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/next"
 import { Inter } from "next/font/google";
 import "@/app/globals.css";
 import CustomCursor from "@/app/components/CustomCursor";
 import Navbar from "@/app/components/Navbar";
 import Security from "@/app/components/Security";
-
 
 const inter = Inter({
   variable: "--font-geist-sans",
@@ -45,6 +45,7 @@ export default function RootLayout({
 
         {/* Main Content */}
         <main className="pt-24 min-h-screen">
+          <Analytics />
           {children}
         </main>
       </body>
