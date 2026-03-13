@@ -12,6 +12,37 @@ export interface Project {
 
 const projects: Project[] = [
     {
+        id: "club-connect",
+        title: "Club Connect",
+        description:
+            "Full-stack teachers reservation platform with user authentication, booking system, and an admin dashboard for managing reservations.",
+        techStack: ["React", "Node.js", "Supabase", "Tailwind CSS", "TypeScript"],
+        liveUrl: "https://club-connect-uk.vercel.app/",
+        image: "/projects/club-connect.webp",
+        color: "from-violet-400 to-purple-600",
+    },
+    {
+        id: "barangaysystem",
+        title: "Barangay System",
+        description:
+            "A simple barangay management system for handling resident records and official documents.",
+        techStack: ["NextJS", "Tailwindcss", "Redis", "Typescript", "PostgreSQL"],
+        liveUrl: "/projects/bmis",
+        liveUrlLabel: "See Images",
+        image: "/projects/landingpage.webp",
+        color: "from-orange-400 to-orange-600",
+    },
+    {
+        id: "shopeeaffiliate",
+        title: "Shopee Affiliate Landing Page",
+        description:
+            "This is an affiliate landing page that helps users find the best deals on Shopee,Tiktok and Lazada products.",
+        techStack: ["NextJS", "Tailwindcss", "Typescript"],
+        liveUrl: "https://limited-stocks-essentials.vercel.app/",
+        image: "/projects/shopeeaffiliate.webp",
+        color: "from-orange-400 to-orange-600",
+    },
+    {
         id: "CyberFix",
         title: "CyberFix",
         description:
@@ -23,35 +54,16 @@ const projects: Project[] = [
         color: "from-cyan-400 to-blue-600",
     },
     {
-        id: "club-connect",
-        title: "Club Connect",
-        description:
-            "Full-stack teachers reservation platform with user authentication, booking system, and an admin dashboard for managing reservations.",
-        techStack: ["React", "Node.js", "Supabase", "Tailwind CSS", "TypeScript"],
-        liveUrl: "https://club-connect-uk.vercel.app/",
-        image: "/projects/club-connect.webp",
-        color: "from-violet-400 to-purple-600",
-    },
-    {
         id: "chemicalbalancercalc",
-        title:"Chemical Equation Balancer",
+        title: "Chemical Equation Balancer",
         description:
             "This is my simple project when i was in college a chemical equation calculator that calculates math equations or a chemical compositions.",
-        techStack: ["HTML","Tailwindcss","Javascript"],
+        techStack: ["HTML", "Tailwindcss", "Javascript"],
         liveUrl: "https://chemicalbalancercalculater.vercel.app/",
         image: "/projects/chem-bal.webp",
         color: "from-pink-400 to-rose-600",
     },
-    {
-        id: "shopeeaffiliate",
-        title:"Shopee Affiliate Landing Page",
-        description:
-            "This is an affiliate landing page that helps users find the best deals on Shopee,Tiktok and Lazada products.",
-        techStack: ["HTML","Tailwindcss","Javascript"],
-        liveUrl: "https://limited-stocks-essentials.vercel.app/",
-        image: "/projects/shopeeaffiliate.webp",
-        color: "from-orange-400 to-orange-600",
-    },
+
 ];
 
 export default projects;

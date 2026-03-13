@@ -13,13 +13,15 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "John Relix — Full-Stack Developer Portfolio",
+  title: "John Relix — Developer| Cybersecurity | Data Analysis Portfolio",
   description:
-    "Explore the portfolio of John Relix, a full-stack developer specializing in React, Next.js, and modern web technologies.",
+    "Explore the portfolio of John Relix, a developer specializing in React, Next.js, and modern web technologies.",
   keywords: [
     "portfolio",
     "developer",
-    "full-stack",
+    "cybersecurity",
+    "data analyst",
+    "python",
     "react",
     "next.js",
     "typescript",

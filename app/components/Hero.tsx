@@ -88,7 +88,7 @@ export default function HeroSection() {
                             opacity: 0.9,
                         }}
                     >
-                        John Relix — Full-Stack Engineer | Cybersecurity Researcher
+                        John Relix — Developer | Cybersecurity Researcher | Data Analyst
                     </p>
 
                     {/* Tagline */}

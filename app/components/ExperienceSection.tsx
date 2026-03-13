@@ -15,32 +15,20 @@ interface Experience {
 const experiences: Experience[] = [
     {
         id: "1",
-        role: "SEO Specialist",
-        company: "Freelance",
-        period: "Jun 2019 - 2021 · 2 yrs 9 mos",
-        description: "Helping retail health and personal care product websites rank on top of Google and Bing search engines.",
+        role: "Admin Support Role",
+        company: "DEPED-Schools Division Office of Camarines Norte",
+        period: "November 2025 - December  2025 · 2 mos",
+        description: "Provided technical support and system maintenance for many offices.",
         highlights: [
-            "Optimized websites for search engine ranking",
-            "Implemented SEO best practices for retail clients",
-            "Improved organic traffic through keyword research"
+            "Troubleshot hardware and software issues for 50+ clients",
+            "Set up and configured Windows/Linux workstations",
+            "Implemented basic network security measures",
+            "Educating staff on cybersecurity best practices"
         ],
         type: "work"
     },
     {
         id: "2",
-        role: "Landing Page Designer",
-        company: "Freelance",
-        period: "Jul 2018 - Present · 9 yrs 8 mos",
-        description: "Helping businesses showcase their products and generate leads through high-converting landing pages.",
-        highlights: [
-            "Designed 50+ landing pages for various businesses",
-            "Improved client conversion rates by 40%",
-            "Created responsive designs with modern UI/UX"
-        ],
-        type: "work"
-    },
-    {
-        id: "3",
         role: "Mobile Application Developer",
         company: "HeroApps Software Development Services",
         period: "Dec 2024 - Apr 2025 · 5 mos",
@@ -53,7 +41,7 @@ const experiences: Experience[] = [
         type: "work"
     },
     {
-        id: "4",
+        id: "3",
         role: "Website Developer",
         company: "Museo Bulawan",
         period: "Mar 2024 - May 2024 · 3 mos",
@@ -66,16 +54,28 @@ const experiences: Experience[] = [
         type: "work"
     },
     {
-        id: "5",
-        role: "Admin Support Role",
-        company: "DEPED-Schools Division Office of Camarines Norte",
-        period: "November 2025 - December  2025 · 2 mos",
-        description: "Provided technical support and system maintenance for many offices.",
+        id: "4",
+        role: "SEO Specialist",
+        company: "Freelance",
+        period: "Jun 2019 - 2021 · 2 yrs 9 mos",
+        description: "Helping retail health and personal care product websites rank on top of Google and Bing search engines.",
         highlights: [
-            "Troubleshot hardware and software issues for 50+ clients",
-            "Set up and configured Windows/Linux workstations",
-            "Implemented basic network security measures",
-            "Educating staff on cybersecurity best practices"
+            "Optimized websites for search engine ranking",
+            "Implemented SEO best practices for retail clients",
+            "Improved organic traffic through keyword research"
+        ],
+        type: "work"
+    },
+    {
+        id: "5",
+        role: "Landing Page Designer",
+        company: "Freelance",
+        period: "Jul 2018 - Present · 9 yrs 8 mos",
+        description: "Helping businesses showcase their products and generate leads through high-converting landing pages.",
+        highlights: [
+            "Designed 50+ landing pages for various businesses",
+            "Improved client conversion rates by 40%",
+            "Created responsive designs with modern UI/UX"
         ],
         type: "work"
     }
@@ -107,7 +107,7 @@ function ExperienceCard({ experience, index }: { experience: Experience; index: 
                     left: 0,
                     width: "3px",
                     height: "100%",
-                    background: experience.type === "work" 
+                    background: experience.type === "work"
                         ? "linear-gradient(180deg, var(--accent-cyan), var(--accent-violet))"
                         : "linear-gradient(180deg, var(--accent-violet), var(--accent-pink))",
                     opacity: 0.8,
