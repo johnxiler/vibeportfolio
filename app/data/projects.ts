@@ -48,9 +48,19 @@ const projects: Project[] = [
         description:
             "This is a clone of shopee website that i made as a personal project.",
         techStack: ["NextJS", "Tailwindcss", "Typescript"],
-        liveUrl: "https://shopee-nextjs-phi.vercel.app/",
+        liveUrl: "https://shopee-nextjs-phi.vercel.app/https://facebook-nextjs-tau.vercel.app/",
         image: "/projects/shopee-clone.webp",
         color: "from-orange-400 to-orange-600",
+    },
+    {
+        id: "facebook-next",
+        title: "Facebook Clone",
+        description:
+            "This is a clone of facebook website that i made as a personal project.",
+        techStack: ["NextJS", "Tailwindcss", "Typescript"],
+        liveUrl: "https://facebook-nextjs-tau.vercel.app/",
+        image: "/projects/facebook-clone.webp",
+        color: "from-blue-400 to-blue-600",
     },
     {
         id: "CyberFix",
