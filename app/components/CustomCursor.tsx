@@ -79,6 +79,7 @@ export default function CustomCursor() {
 
   return (
     <div
+      id="custom-cursor-container"
       style={{
         position: "fixed",
         top: 0,
@@ -89,6 +90,7 @@ export default function CustomCursor() {
         zIndex: 9999,
         overflow: "hidden",
         mixBlendMode: "screen",
+        transition: "opacity 0.3s ease",
       }}
     >
       <canvas

@@ -20,7 +20,7 @@ const experiences: Experience[] = [
         period: "November 2025 - December  2025 · 2 mos",
         description: "Provided technical support and system maintenance for many offices.",
         highlights: [
-            "Troubleshot hardware and software issues for 50+ clients",
+            "Troubleshoot hardware and software issues for 50+ clients",
             "Set up and configured Windows/Linux workstations",
             "Implemented basic network security measures",
             "Educating staff on cybersecurity best practices"
@@ -31,7 +31,7 @@ const experiences: Experience[] = [
         id: "2",
         role: "Mobile Application Developer",
         company: "HeroApps Software Development Services",
-        period: "Dec 2024 - Apr 2025 · 5 mos",
+        period: "November 2024 - October 2025 · 1 year",
         description: "Android development internship focused on building mobile applications.",
         highlights: [
             "Learned Android development core concepts",

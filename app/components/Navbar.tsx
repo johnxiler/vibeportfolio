@@ -64,6 +64,8 @@ export default function Navbar() {
             {/* ================= NAVBAR ================= */}
             <nav
                 className="fixed top-0 left-0 w-full z-50 transition-all duration-300 backdrop-blur-xl"
+                onMouseEnter={() => document.body.setAttribute('data-navbar-hovered', 'true')}
+                onMouseLeave={() => document.body.removeAttribute('data-navbar-hovered')}
                 style={{
                     background:
                         scrolled || isMenuOpen
@@ -80,15 +82,15 @@ export default function Navbar() {
                             transition: "all 0.3s ease",
                         }}
                     >
-                        <Image 
-                            src="/favicon.ico" 
-                            alt="Logo" 
-                            width={20} 
-                            height={20} 
-                            className="w-5 h-5 transition-all duration-300 group-hover:scale-110 group-hover:drop-shadow-[0_0_8px_rgba(0,240,255,0.8)]" 
+                        <Image
+                            src="/favicon.ico"
+                            alt="Logo"
+                            width={20}
+                            height={20}
+                            className="w-5 h-5 transition-all duration-300 group-hover:scale-110 group-hover:drop-shadow-[0_0_8px_rgba(0,240,255,0.8)]"
                         />
-                        <span 
-                            className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent transition-all duration-300 group-hover:drop-shadow-[0_0_10px_rgba(0,240,255,0.6)]"
+                        <span
+                            className="bg-linear-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent transition-all duration-300 group-hover:drop-shadow-[0_0_10px_rgba(0,240,255,0.6)]"
                         >
                             JX
                         </span>

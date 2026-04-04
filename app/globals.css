@@ -620,3 +620,10 @@ body {
     font-size: 1.75rem;
   }
 }
+
+/* ───────────── Custom Cursor Fix ──────────────── */
+body[data-navbar-hovered="true"] #custom-cursor-container {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
