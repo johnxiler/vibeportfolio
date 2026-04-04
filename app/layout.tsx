@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/next"
 import { Inter } from "next/font/google";
 import "@/app/globals.css";
-import CustomCursor from "@/app/components/CustomCursor";
+
 import Navbar from "@/app/components/Navbar";
 import Security from "@/app/components/Security";
 
@@ -38,7 +38,7 @@ export default function RootLayout({
       <body
         className={`${inter.variable} antialiased bg-[#0a0a0f] text-white overflow-x-hidden`}
       >
-        <CustomCursor />
+
         <Security />
 
 

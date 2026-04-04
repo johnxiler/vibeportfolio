@@ -43,6 +43,16 @@ const projects: Project[] = [
         color: "from-orange-400 to-orange-600",
     },
     {
+        id: "shopee-next",
+        title: "Shopee Clone",
+        description:
+            "This is a clone of shopee website that i made as a personal project.",
+        techStack: ["NextJS", "Tailwindcss", "Typescript"],
+        liveUrl: "https://shopee-nextjs-phi.vercel.app/",
+        image: "/projects/shopee-clone.webp",
+        color: "from-orange-400 to-orange-600",
+    },
+    {
         id: "CyberFix",
         title: "CyberFix",
         description:

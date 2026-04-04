@@ -6,34 +6,36 @@ export default function CustomCursor() {
   const containerRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
-    // Check if device is mobile/touch
     const isMobile =
       typeof window !== "undefined" &&
       (window.matchMedia("(pointer: coarse)").matches || window.innerWidth < 768);
 
     if (isMobile) return;
 
-    // Create script element to dynamically load the threejs cursor
-    const script = document.createElement("script");
-    script.type = "module";
-    script.innerHTML = `
-      import TubesCursor from "https://cdn.jsdelivr.net/npm/threejs-components@0.0.19/build/cursors/tubes1.min.js";
-      
-      const container = document.getElementById('threejs-cursor-canvas');
-      if (container) {
-        window.tubesCursorApp = TubesCursor(container, {
-          tubes: {
-            colors: ["#f967fb", "#53bc28", "#6958d5"],
-            lights: {
-              intensity: 200,
-              colors: ["#83f36e", "#fe8a2e", "#ff008a", "#60aed5"]
-            }
-          }
-        });
-      }
-    `;
+    let isActive = true;
 
-    document.body.appendChild(script);
+    if (!(window as any).tubesCursorApp) {
+      const script = document.createElement("script");
+      script.type = "module";
+      script.setAttribute("data-cursor-script", "true");
+      script.innerHTML = `
+        import TubesCursor from "https://cdn.jsdelivr.net/npm/threejs-components@0.0.19/build/cursors/tubes1.min.js";
+        
+        const container = document.getElementById('threejs-cursor-canvas');
+        if (container && !window.tubesCursorApp) {
+          window.tubesCursorApp = TubesCursor(container, {
+            tubes: {
+              colors: ["#f967fb", "#53bc28", "#6958d5"],
+              lights: {
+                intensity: 200,
+                colors: ["#83f36e", "#fe8a2e", "#ff008a", "#60aed5"]
+              }
+            }
+          });
+        }
+      `;
+      document.body.appendChild(script);
+    }
 
     const randomColors = (count: number) => {
       return new Array(count)
@@ -60,15 +62,22 @@ export default function CustomCursor() {
     document.body.addEventListener("click", handleClick);
 
     return () => {
+      isActive = false;
       document.body.removeEventListener("click", handleClick);
-      const app = (window as any).tubesCursorApp;
-      if (app && typeof app.destroy === "function") {
-        app.destroy();
+
+      try {
+        const app = (window as any).tubesCursorApp;
+        if (app && typeof app.destroy === "function") {
+          app.destroy();
+        }
+      } catch {
+        // WebGPU device may already be lost — safe to ignore
       }
       delete (window as any).tubesCursorApp;
 
-      if (script.parentNode) {
-        script.parentNode.removeChild(script);
+      const oldScript = document.querySelector('script[data-cursor-script]');
+      if (oldScript?.parentNode) {
+        oldScript.parentNode.removeChild(oldScript);
       }
 
       if (containerRef.current) {
